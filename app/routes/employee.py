@@ -55,7 +55,6 @@ def employee_dashboard():
         return redirect(url_for('auth.login'))
         
     employees = Employee.query.all()
-<<<<<<< HEAD
     return render_template('employee.html', user=user, employees=employees)
 
 @employee_bp.route('/employee/delete/<int:id>', methods=['POST'])
@@ -74,6 +73,3 @@ def delete_employee(id):
     except Exception as e:
         db.session.rollback()
         return jsonify({'success': False, 'message': str(e)}), 500
-=======
-    return render_template('employee.html', user=user, employees=employees)
->>>>>>> 90f119cf5a7941c8a9a667d68767d972ef0e9c43
